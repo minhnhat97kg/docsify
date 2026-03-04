@@ -416,8 +416,7 @@
       #sidebar.open { transform: translateX(0); }
       #sidebar-overlay.open { display: block; }
       #menu-btn { display: block; }
-      #topbar { flex-wrap: wrap; }
-      #search-wrap { max-width: none; flex: 1 1 100%; order: 3; }
+      #search-wrap { display: none; }
 
       /* hide topbar controls, show in sidebar instead */
       .topbar-right { display: none !important; }
@@ -457,6 +456,12 @@
     <aside id="sidebar">
       <!-- Mobile-only controls -->
       <div id="sidebar-controls" style="display:none;gap:6px;flex-wrap:wrap">
+        <div id="sb-search-wrap" style="display:flex;align-items:center;border:1px solid var(--border);width:100%">
+          <span style="padding:3px 6px;color:var(--text3);border-right:1px solid var(--border);user-select:none">/</span>
+          <input id="sb-search-input" type="text" placeholder="search..." autocomplete="off" spellcheck="false"
+            style="flex:1;border:none;outline:none;background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14px;font-weight:500;padding:3px 8px" />
+          <span id="sb-search-clear" onclick="clearSearch()" style="padding:3px 7px;color:var(--text3);cursor:pointer;display:none;border-left:1px solid var(--border)">[x]</span>
+        </div>
         <div style="display:flex;gap:4px">
           <button class="txt-btn on" data-lang="vi" onclick="setLang('vi')" id="sb-lang-vi">vi</button>
           <button class="txt-btn"    data-lang="en" onclick="setLang('en')" id="sb-lang-en">en</button>

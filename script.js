@@ -35,13 +35,23 @@ async function boot() {
 
   setTheme(localStorage.getItem("kb-theme") || "light", false);
 
-  document.getElementById("search-input").addEventListener("input", (e) => {
-    state.searchQuery = e.target.value.trim();
-    document.getElementById("search-clear").style.display =
-      state.searchQuery ? "inline" : "none";
+  function onSearchInput(val) {
+    state.searchQuery = val.trim();
+    const show = state.searchQuery ? "inline" : "none";
+    document.getElementById("search-clear").style.display = show;
+    const sbClear = document.getElementById("sb-search-clear");
+    if (sbClear) sbClear.style.display = show;
+    // sync both inputs
+    document.getElementById("search-input").value = val;
+    const sbInput = document.getElementById("sb-search-input");
+    if (sbInput) sbInput.value = val;
     state.page = 1;
     applyFilters();
-  });
+  }
+
+  document.getElementById("search-input").addEventListener("input", (e) => onSearchInput(e.target.value));
+  const sbSearchInput = document.getElementById("sb-search-input");
+  if (sbSearchInput) sbSearchInput.addEventListener("input", (e) => onSearchInput(e.target.value));
 
   try {
     const base = document.querySelector("base")?.href || "./";
@@ -185,6 +195,10 @@ function clearFilters() {
   state.page = 1;
   document.getElementById("search-input").value = "";
   document.getElementById("search-clear").style.display = "none";
+  const sbInput = document.getElementById("sb-search-input");
+  if (sbInput) sbInput.value = "";
+  const sbClear = document.getElementById("sb-search-clear");
+  if (sbClear) sbClear.style.display = "none";
   applyFilters();
 }
 
@@ -193,6 +207,10 @@ function clearSearch() {
   state.page = 1;
   document.getElementById("search-input").value = "";
   document.getElementById("search-clear").style.display = "none";
+  const sbInput = document.getElementById("sb-search-input");
+  if (sbInput) sbInput.value = "";
+  const sbClear = document.getElementById("sb-search-clear");
+  if (sbClear) sbClear.style.display = "none";
   applyFilters();
 }
 
