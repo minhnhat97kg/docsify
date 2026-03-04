@@ -19,8 +19,8 @@ except ImportError:
 
 # ── Configuration ────────────────────────────────────────────────────────────
 
-CONTENT_DIR = Path(__file__).parent.parent / "docs" / "content"
-OUTPUT_FILE = Path(__file__).parent.parent / "docs" / "index.json"
+CONTENT_DIR = Path(__file__).parent.parent / "content"
+OUTPUT_FILE = Path(__file__).parent.parent / "index.json"
 REQUIRED_FIELDS = ["title", "tags", "date", "author", "summary"]
 DATE_FORMAT = "%Y-%m-%d"
 SUPPORTED_LANGS = ["vi", "en", "ja", "zh", "ko", "fr", "de", "es"]
