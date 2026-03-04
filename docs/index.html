@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>docsify</title>
+  <!-- Change href to "/" if repo is served at root (custom domain) -->
+  <!-- Change href to "/repo-name/" if served at github.io/repo-name/ -->
+  <base href="/docsify/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link id="gfm-theme" rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown-light.min.css" />
+  <link id="hljs-theme" rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/github.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js"></script>
+  <style>
+    :root {
+      --bg:      #ffffff;
+      --bg2:     #f0f0f0;
+      --border:  #bbbbbb;
+      --text:    #000000;
+      --text2:   #333333;
+      --text3:   #777777;
+      --mono:    "IBM Plex Mono", "Courier New", monospace;
+    }
+    [data-theme="dark"] {
+      --bg:      #0f0f0f;
+      --bg2:     #1c1c1c;
+      --border:  #383838;
+      --text:    #eeeeee;
+      --text2:   #cccccc;
+      --text3:   #777777;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--mono);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.65;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 500;
+    }
+
+    /* ── Shell ── */
+    html, body { height: 100%; overflow: hidden; }
+
+    #shell {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* ── Topbar ── */
+    #topbar {
+      flex-shrink: 0;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    #menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 13px;
+      padding: 2px 8px;
+      cursor: pointer;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    #search-wrap {
+      flex: 1;
+      max-width: 420px;
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border);
+    }
+
+    .search-prefix {
+      padding: 3px 6px;
+      color: var(--text3);
+      border-right: 1px solid var(--border);
+      user-select: none;
+    }
+
+    #search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 3px 8px;
+    }
+
+    #search-clear {
+      padding: 3px 7px;
+      color: var(--text3);
+      cursor: pointer;
+      display: none;
+      border-left: 1px solid var(--border);
+    }
+
+    #search-clear:hover { color: var(--text); }
+
+    .topbar-right {
+      margin-left: auto;
+      display: flex;
+      gap: 6px;
+    }
+
+    .txt-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text2);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 2px 9px;
+      cursor: pointer;
+    }
+
+    .txt-btn:hover { color: var(--text); border-color: var(--text); }
+    .txt-btn.on    { color: var(--text); border-color: var(--text); }
+
+    /* ── Body grid ── */
+    #body-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    /* ── Sidebar ── */
+    #sidebar {
+      border-right: 1px solid var(--border);
+      padding: 12px 10px;
+      overflow-y: auto;
+      background: var(--bg2);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .side-title {
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text3);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    /* Tags */
+    .tag-list { display: flex; flex-direction: column; gap: 1px; }
+
+    .tag-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 2px 4px;
+      cursor: pointer;
+      color: var(--text2);
+    }
+
+    .tag-item:hover { color: var(--text); background: var(--bg); }
+
+    .tag-item.on {
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .tag-item.on::before { content: "> "; }
+
+    .tag-cnt { color: var(--text3); }
+
+    /* Authors */
+    .author-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 2px 4px;
+      cursor: pointer;
+      color: var(--text2);
+    }
+
+    .author-item:hover { color: var(--text); background: var(--bg); }
+    .author-item.on { color: var(--text); background: var(--bg); }
+    .author-item.on::before { content: "> "; }
+
+    /* ── Main ── */
+    #main {
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* List view */
+    #list-view { display: flex; flex-direction: column; flex: 1; }
+
+    .list-bar {
+      border-bottom: 1px solid var(--border);
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--text3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .filter-chip {
+      color: var(--text2);
+      border: 1px solid var(--border);
+      padding: 0 7px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .filter-x { cursor: pointer; }
+    .filter-x:hover { color: var(--text); }
+
+    #article-list {
+      padding: 0;
+      flex: 1;
+    }
+
+    .article-card {
+      border-bottom: 1px solid var(--border);
+      padding: 13px 16px;
+      cursor: pointer;
+    }
+
+    .article-card:hover { background: var(--bg2); }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: var(--text3);
+      margin-bottom: 5px;
+    }
+
+    .card-summary {
+      color: var(--text2);
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-tags { font-size: 12px; color: var(--text3); }
+
+    /* ── Pagination ── */
+    #pagination {
+      border-top: 1px solid var(--border);
+      padding: 7px 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+
+    .pg-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text2);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 2px 9px;
+      cursor: pointer;
+      min-width: 30px;
+    }
+
+    .pg-btn:hover:not(:disabled) { color: var(--text); border-color: var(--text); }
+    .pg-btn.on { color: var(--text); border-color: var(--text); font-weight: bold; }
+    .pg-btn:disabled { opacity: .3; cursor: default; }
+    .pg-dots { color: var(--text3); padding: 0 3px; }
+
+    /* ── Detail view ── */
+    #detail-view {
+      display: none;
+      flex-direction: column;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .detail-bar {
+      border-bottom: 1px solid var(--border);
+      padding: 5px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    /* Article content */
+    .article-wrap {
+      max-width: 740px;
+      padding: 24px 20px 56px;
+    }
+
+    .article-h1 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .article-byline {
+      font-size: 12px;
+      color: var(--text3);
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Markdown (github-markdown-css) overrides ── */
+    .markdown-body {
+      font-family: var(--mono) !important;
+      font-size: 14px !important;
+      line-height: 1.8 !important;
+      background: transparent !important;
+      color-scheme: normal;
+    }
+
+    .markdown-body pre {
+      font-size: 13px !important;
+    }
+
+    .markdown-body pre > code {
+      font-size: 13px !important;
+    }
+
+    /* State messages */
+    .msg {
+      padding: 40px 14px;
+      text-align: center;
+      color: var(--text3);
+      font-size: 12px;
+    }
+
+    /* ── Footer ── */
+    #footer {
+      flex-shrink: 0;
+      border-top: 1px solid var(--border);
+      padding: 5px 16px;
+      font-size: 12px;
+      color: var(--text3);
+      display: flex;
+      justify-content: space-between;
+      background: var(--bg2);
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); }
+
+    /* ── Mobile ── */
+    #sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.5);
+      z-index: 150;
+    }
+
+    @media (max-width: 600px) {
+      #body-grid { grid-template-columns: 1fr; }
+
+      #sidebar {
+        position: fixed;
+        top: 0; left: 0; bottom: 0;
+        width: 230px;
+        z-index: 200;
+        transform: translateX(-100%);
+        transition: transform .2s;
+      }
+
+      #sidebar.open { transform: translateX(0); }
+      #sidebar-overlay.open { display: block; }
+      #menu-btn { display: block; }
+      #search-wrap { max-width: none; flex: 1; }
+
+      /* hide topbar controls, show in sidebar instead */
+      .topbar-right { display: none !important; }
+      #sidebar-controls { display: flex !important; }
+
+      .article-wrap { padding: 16px 14px 40px; }
+      .article-h1 { font-size: 18px; }
+      .card-title { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+<div id="shell">
+
+  <header id="topbar">
+    <button id="menu-btn" onclick="toggleSidebar()">[=]</button>
+    <div class="brand">[ docsify ]</div>
+
+    <div id="search-wrap">
+      <span class="search-prefix">/</span>
+      <input id="search-input" type="text" placeholder="search..." autocomplete="off" spellcheck="false" />
+      <span id="search-clear" onclick="clearSearch()">[x]</span>
+    </div>
+
+    <div class="topbar-right">
+      <div id="lang-sw" style="display:flex;gap:4px">
+        <button class="txt-btn on" data-lang="vi" onclick="setLang('vi')">vi</button>
+        <button class="txt-btn"    data-lang="en" onclick="setLang('en')">en</button>
+      </div>
+      <button class="txt-btn" id="theme-btn" onclick="toggleTheme()">[dark]</button>
+    </div>
+  </header>
+
+  <div id="body-grid">
+    <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <aside id="sidebar">
+      <!-- Mobile-only controls -->
+      <div id="sidebar-controls" style="display:none;gap:6px;flex-wrap:wrap">
+        <div style="display:flex;gap:4px">
+          <button class="txt-btn on" data-lang="vi" onclick="setLang('vi')" id="sb-lang-vi">vi</button>
+          <button class="txt-btn"    data-lang="en" onclick="setLang('en')" id="sb-lang-en">en</button>
+        </div>
+        <button class="txt-btn" id="sb-theme-btn" onclick="toggleTheme()">[dark]</button>
+      </div>
+      <div>
+        <div class="side-title">-- tags --</div>
+        <div class="tag-list" id="tag-list"></div>
+      </div>
+      <div>
+        <div class="side-title">-- authors --</div>
+        <div id="author-list"></div>
+      </div>
+    </aside>
+
+    <main id="main">
+      <div id="list-view">
+        <div class="list-bar">
+          <span id="result-count"></span>
+          <span id="filter-badge"></span>
+        </div>
+        <div id="article-list"><div class="msg">loading...</div></div>
+        <div id="pagination"></div>
+      </div>
+
+      <div id="detail-view">
+        <div class="detail-bar">
+          <button class="txt-btn" onclick="showList()">[&lt;- back]</button>
+          <div id="detail-langs" style="display:flex;gap:4px;margin-left:auto"></div>
+        </div>
+        <div class="article-wrap">
+          <div id="art-header"></div>
+          <div class="markdown-body" id="art-body"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer id="footer">
+    <span id="footer-stats">--</span>
+    <span>docsify // github pages</span>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
