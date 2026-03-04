@@ -11,6 +11,8 @@
 A minimal knowledge base powered by Markdown files, Python, and GitHub Actions.
 No database. No server. Just files.
 
+**Live site:** [https://minhnhat97kg.github.io/docsify/](https://minhnhat97kg.github.io/docsify/)
+
 ---
 
 ## How it works
