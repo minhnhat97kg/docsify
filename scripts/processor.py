@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Content Processor - Scans content/ directory, validates metadata,
-and generates public/index.json for the Headless CMS.
+and generates docs/index.json for the Headless CMS.
 """
 
 import os
@@ -19,8 +19,8 @@ except ImportError:
 
 # ── Configuration ────────────────────────────────────────────────────────────
 
-CONTENT_DIR = Path(__file__).parent.parent / "public" / "content"
-OUTPUT_FILE = Path(__file__).parent.parent / "public" / "index.json"
+CONTENT_DIR = Path(__file__).parent.parent / "docs" / "content"
+OUTPUT_FILE = Path(__file__).parent.parent / "docs" / "index.json"
 REQUIRED_FIELDS = ["title", "tags", "date", "author", "summary"]
 DATE_FORMAT = "%Y-%m-%d"
 SUPPORTED_LANGS = ["vi", "en", "ja", "zh", "ko", "fr", "de", "es"]
@@ -84,7 +84,7 @@ def detect_language(filename: str) -> str | None:
 
 
 def build_article_path(folder_name: str, lang: str) -> str:
-    """Path relative to site root (public/ is served as /)."""
+    """Path relative to site root (docs/ is served as /)."""
     return f"content/{folder_name}/{lang}.md"
 
 # ── Core Processing ──────────────────────────────────────────────────────────
@@ -185,7 +185,7 @@ def process_content_dir() -> list:
 # ── Output ───────────────────────────────────────────────────────────────────
 
 def write_output(articles: list):
-    """Write articles list to public/index.json."""
+    """Write articles list to docs/index.json."""
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
     payload = {

@@ -45,7 +45,7 @@ async function boot() {
 
   try {
     const base = document.querySelector("base")?.href || "./";
-    const res = await fetch(base + "public/index.json");
+    const res = await fetch(base + "index.json");
     if (!res.ok) throw new Error("HTTP " + res.status);
     const data = await res.json();
     state.articles = data.articles || [];
