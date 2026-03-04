@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-04T17:06:46Z",
+  "generated_at": "2026-03-04T17:10:04Z",
   "total": 77,
   "articles": [
     {
@@ -23,7 +23,7 @@
           "title": "AWS - KMS & Envelope Encryption",
           "summary": "AWS Key Management Service (KMS) là dịch vụ quản lý khóa bảo mật trên Cloud (HSM - Hardware Security Module).",
           "author": "nathan.huynh",
-          "path": "public/content/aws-aws-kms-envelope-encryption/vi.md"
+          "path": "content/aws-aws-kms-envelope-encryption/vi.md"
         }
       }
     },
@@ -42,7 +42,7 @@
           "title": "AWS - RDS Multi-AZ vs Read Replicas",
           "summary": "Rất nhiều người nhầm lẫn giữa Backup dự phòng (High Availability) và Mở rộng hiệu năng (Scalability). - Multi-AZ: Dành cho Disaster Recovery (Cứu hộ khi có cháy nổ). Không giúp chạy nhanh hơn. -...",
           "author": "nathan.huynh",
-          "path": "public/content/aws-aws-rds-multi-az-vs-read-replicas/vi.md"
+          "path": "content/aws-aws-rds-multi-az-vs-read-replicas/vi.md"
         }
       }
     },
@@ -66,7 +66,7 @@
           "title": "AWS - Secrets Manager & Automated Rotation",
           "summary": "Trong mô hình cũ, Password Database thường được lưu trong biến môi trường () hoặc ConfigMap (K8s).",
           "author": "nathan.huynh",
-          "path": "public/content/aws-aws-secrets-manager-automated-rotation/vi.md"
+          "path": "content/aws-aws-secrets-manager-automated-rotation/vi.md"
         }
       }
     },
@@ -90,7 +90,7 @@
           "title": "AWS - IAM Roles & Policies (Least Privilege)",
           "summary": "Trong bảo mật Cloud, tư duy mặc định phải là \"Zero Trust\" (Không tin ai cả).",
           "author": "nathan.huynh",
-          "path": "public/content/aws-iam-roles-policies-least-privilege/vi.md"
+          "path": "content/aws-iam-roles-policies-least-privilege/vi.md"
         }
       }
     },
@@ -114,7 +114,7 @@
           "title": "AWS - Security Groups vs NACL",
           "summary": "Để bảo vệ server trên AWS, chúng ta có 2 lớp tường lửa hoạt động song song.",
           "author": "nathan.huynh",
-          "path": "public/content/aws-security-groups-vs-nacl/vi.md"
+          "path": "content/aws-security-groups-vs-nacl/vi.md"
         }
       }
     },
@@ -138,7 +138,7 @@
           "title": "AWS - WAF (Web Application Firewall)",
           "summary": "Nếu Security Group (Network Firewall) là cái hàng rào bảo vệ tòa nhà (chỉ kiểm tra xem bạn là ai, từ đâu đến - IP/Port), thì WAF chính là nhân viên an ninh đứng ngay cửa.",
           "author": "nathan.huynh",
-          "path": "public/content/aws-waf-web-application-firewall/vi.md"
+          "path": "content/aws-waf-web-application-firewall/vi.md"
         }
       }
     },
@@ -157,7 +157,7 @@
           "title": "Behavioral Interview - Phỏng vấn hành vi",
           "summary": "Ở level Senior/Lead, người ta không hỏi bạn \"Viết hàm đảo ngược chuỗi\" nữa. Họ muốn biết bạn xử lý khủng hoảng, mâu thuẫn và thất bại như thế nào.",
           "author": "nathan.huynh",
-          "path": "public/content/behavioral-interview/vi.md"
+          "path": "content/behavioral-interview/vi.md"
         }
       }
     },
@@ -180,7 +180,7 @@
           "title": "Clean Architecture - Hexagonal, Ports & Adapters",
           "summary": "Trong kiến trúc phân tầng truyền thống (Controller -> Service -> Repository -> Database):",
           "author": "nathan.huynh",
-          "path": "public/content/clean-architecture-hexagonal-ports-adapters/vi.md"
+          "path": "content/clean-architecture-hexagonal-ports-adapters/vi.md"
         }
       }
     },
@@ -204,7 +204,7 @@
           "title": "Cloud Architecture - The Big Picture",
           "summary": "Để nhớ được mối quan hệ giữa hàng tá dịch vụ AWS, hãy hình dung chúng như một thành phố được quy hoạch bài bản.",
           "author": "nathan.huynh",
-          "path": "public/content/cloud-architecture-the-big-picture/vi.md"
+          "path": "content/cloud-architecture-the-big-picture/vi.md"
         }
       }
     },
@@ -227,7 +227,7 @@
           "title": "Database: ACID Properties",
           "summary": "> > ACID là bộ 4 tính chất tiêu chuẩn mà một hệ quản trị cơ sở dữ liệu (DBMS) như PostgreSQL, MySQL phải đảm bảo để một Giao dịch (Transaction) được coi là hợp lệ và an toàn.",
           "author": "nathan.huynh",
-          "path": "public/content/database-acid-properties/vi.md"
+          "path": "content/database-acid-properties/vi.md"
         }
       }
     },
@@ -251,7 +251,7 @@
           "title": "Database - SQL Query Optimization",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/database-advance/vi.md"
+          "path": "content/database-advance/vi.md"
         }
       }
     },
@@ -274,7 +274,7 @@
           "title": "Database - Advanced SQL Concepts",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/database-advance-2/vi.md"
+          "path": "content/database-advance-2/vi.md"
         }
       }
     },
@@ -298,7 +298,7 @@
           "title": "Database - Connection Pool",
           "summary": "> > Khác với MySQL hay Oracle (dùng Thread), PostgreSQL sử dụng mô hình Process-based. > > - Mỗi kết nối (Client Connection) sẽ fork ra một tiến trình OS mới (). > > - Mỗi tiến trình này tốn...",
           "author": "nathan.huynh",
-          "path": "public/content/database-connection-pool/vi.md"
+          "path": "content/database-connection-pool/vi.md"
         }
       }
     },
@@ -322,7 +322,7 @@
           "title": "Database - HNSW Index",
           "summary": "Trong thế giới Vector Search, chúng ta luôn phải đánh đổi giữa 3 yếu tố: Tốc độ, Độ chính xác (Recall), và Chi phí bộ nhớ.",
           "author": "nathan.huynh",
-          "path": "public/content/database-hnsw-index-hierarchical-navigable-small-world/vi.md"
+          "path": "content/database-hnsw-index-hierarchical-navigable-small-world/vi.md"
         }
       }
     },
@@ -345,7 +345,7 @@
           "title": "Database - Indexing: B-Tree",
           "summary": "> > B-Tree (Balanced Tree) là cấu trúc dữ liệu mặc định khi bạn tạo Index (). > > Nó là một cây tự cân bằng (Self-balancing), được tối ưu hóa đặc biệt cho các hệ thống lưu trữ trên đĩa cứng...",
           "author": "nathan.huynh",
-          "path": "public/content/database-indexing-b-tree-the-default-workhorse/vi.md"
+          "path": "content/database-indexing-b-tree-the-default-workhorse/vi.md"
         }
       }
     },
@@ -370,7 +370,7 @@
           "title": "Database - Indexing: GIN & GiST",
           "summary": "B-Tree rất tuyệt vời cho các dữ liệu đơn giản (số, chuỗi ngắn). Nhưng trong Ngân hàng hiện đại, dữ liệu phức tạp hơn nhiều:",
           "author": "nathan.huynh",
-          "path": "public/content/database-indexing-gin-gist-advanced-indexing/vi.md"
+          "path": "content/database-indexing-gin-gist-advanced-indexing/vi.md"
         }
       }
     },
@@ -389,7 +389,7 @@
           "title": "Database - Isolation Levels",
           "summary": "Dưới đây là giải thích chi tiết về Isolation Levels, tập trung vào sự khác biệt giữa mức mặc định và mức an toàn nhất, cùng với hiện tượng \"Phantom Read\" nguy hiểm trong môi trường tài chính.",
           "author": "nathan.huynh",
-          "path": "public/content/database-isolation-level-read-committed-vs-serializable/vi.md"
+          "path": "content/database-isolation-level-read-committed-vs-serializable/vi.md"
         }
       }
     },
@@ -413,7 +413,7 @@
           "title": "Database - Locking: Pessimistic vs Optimistic",
           "summary": "Khi nhiều transaction cùng muốn sửa một dòng dữ liệu (ví dụ: cùng trừ tiền một tài khoản), ta cần cơ chế để quyết định ai được làm trước, ai phải chờ, hoặc ai bị từ chối.",
           "author": "nathan.huynh",
-          "path": "public/content/database-locking-strategies-pessimistic-vs-optimistic/vi.md"
+          "path": "content/database-locking-strategies-pessimistic-vs-optimistic/vi.md"
         }
       }
     },
@@ -436,7 +436,7 @@
           "title": "Database - MVCC & Dead Tuples",
           "summary": "> > \"Readers never block Writers, and Writers never block Readers.\" > > Thay vì sử dụng cơ chế Lock (khóa) truyền thống khiến người đọc phải chờ người ghi (và ngược lại), PostgreSQL sử dụng cơ chế...",
           "author": "nathan.huynh",
-          "path": "public/content/database-mvcc-dead-tuples/vi.md"
+          "path": "content/database-mvcc-dead-tuples/vi.md"
         }
       }
     },
@@ -459,7 +459,7 @@
           "title": "Database - Query Optimization",
           "summary": "Trước khi optimize, bạn phải biết chậm ở đâu. Đừng đoán mò.",
           "author": "nathan.huynh",
-          "path": "public/content/database-optimization/vi.md"
+          "path": "content/database-optimization/vi.md"
         }
       }
     },
@@ -483,7 +483,7 @@
           "title": "Database System Design: Scalability & Reliability",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/database-system-design/vi.md"
+          "path": "content/database-system-design/vi.md"
         }
       }
     },
@@ -507,7 +507,7 @@
           "title": "Database - Table Partitioning (Range, Hash)",
           "summary": "> > Khi một bảng (như của ngân hàng) lớn tới hàng trăm GB hoặc vài TB: > > 1. Index phình to: Index B-Tree không còn nhét vừa RAM -> Truy vấn chậm (Disk I/O). > > 2. Maintenance ác mộng: Vacuum,...",
           "author": "nathan.huynh",
-          "path": "public/content/database-table-partitioning-range-hash/vi.md"
+          "path": "content/database-table-partitioning-range-hash/vi.md"
         }
       }
     },
@@ -531,7 +531,7 @@
           "title": "Database - Vacuum & Autovacuum",
           "summary": "Như đã đề cập trong phần MVCC, khi bạn hoặc , PostgreSQL không thực sự xóa dữ liệu cũ khỏi ổ cứng ngay lập tức.",
           "author": "nathan.huynh",
-          "path": "public/content/database-vacuum-autovacuum-garbage-collection/vi.md"
+          "path": "content/database-vacuum-autovacuum-garbage-collection/vi.md"
         }
       }
     },
@@ -556,7 +556,7 @@
           "title": "Database - Vector Search & HNSW Index",
           "summary": "> > pgvector là một extension mã nguồn mở biến PostgreSQL thành một Vector Database. > > Nó cho phép bạn lưu trữ các Vector Embeddings (mảng số thực nhiều chiều) ngay trong bảng dữ liệu thông...",
           "author": "nathan.huynh",
-          "path": "public/content/database-vector-search-hnsw-index/vi.md"
+          "path": "content/database-vector-search-hnsw-index/vi.md"
         }
       }
     },
@@ -578,7 +578,7 @@
           "title": "DevOps - Advance",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/devops-advance/vi.md"
+          "path": "content/devops-advance/vi.md"
         }
       }
     },
@@ -603,7 +603,7 @@
           "title": "DevOps - Amazon EKS",
           "summary": "Trong môi trường Ngân hàng (Banking), độ tin cậy (Reliability) và bảo mật (Security) là tối thượng.",
           "author": "nathan.huynh",
-          "path": "public/content/devops-amazon-eks-elastic-kubernetes-service/vi.md"
+          "path": "content/devops-amazon-eks-elastic-kubernetes-service/vi.md"
         }
       }
     },
@@ -627,7 +627,7 @@
           "title": "DevOps - AWS Lambda (Serverless)",
           "summary": "Nếu EKS/EC2 là \"bộ khung\" chịu tải chính (Core Banking), thì AWS Lambda là \"keo dán\" kết nối các dịch vụ lại với nhau.",
           "author": "nathan.huynh",
-          "path": "public/content/devops-aws-lambda-serverless-compute/vi.md"
+          "path": "content/devops-aws-lambda-serverless-compute/vi.md"
         }
       }
     },
@@ -646,7 +646,7 @@
           "title": "DevOps - Docker Multistage Builds (Golang)",
           "summary": "Khi mới học Docker với Go, ta thường viết Dockerfile thế này:",
           "author": "nathan.huynh",
-          "path": "public/content/devops-docker-multistage-builds-golang-optimization/vi.md"
+          "path": "content/devops-docker-multistage-builds-golang-optimization/vi.md"
         }
       }
     },
@@ -670,7 +670,7 @@
           "title": "DevOps - EC2 Auto Scaling",
           "summary": "DevOps - EC2 Auto Scaling",
           "author": "nathan.huynh",
-          "path": "public/content/devops-ec2-auto-scaling/vi.md"
+          "path": "content/devops-ec2-auto-scaling/vi.md"
         }
       }
     },
@@ -694,7 +694,7 @@
           "title": "DevOps - VPC & Subnet Architecture",
           "summary": "Nếu AWS là một thành phố khổng lồ, thì VPC chính là mảnh đất riêng của bạn được rào lại.",
           "author": "nathan.huynh",
-          "path": "public/content/devops-vpc-virtual-private-cloud-subnet-architecture/vi.md"
+          "path": "content/devops-vpc-virtual-private-cloud-subnet-architecture/vi.md"
         }
       }
     },
@@ -714,13 +714,13 @@
           "title": "Introduction to Headless CMS on GitHub",
           "summary": "A guide to building a simple Headless CMS system using GitHub and Python.",
           "author": "Admin",
-          "path": "public/content/gioi-thieu-headless-cms/en.md"
+          "path": "content/gioi-thieu-headless-cms/en.md"
         },
         "vi": {
           "title": "Giới thiệu Headless CMS trên GitHub",
           "summary": "Hướng dẫn xây dựng hệ thống Headless CMS đơn giản sử dụng GitHub và Python.",
           "author": "nathan.huynh",
-          "path": "public/content/gioi-thieu-headless-cms/vi.md"
+          "path": "content/gioi-thieu-headless-cms/vi.md"
         }
       }
     },
@@ -742,7 +742,7 @@
           "title": "Golang: Worker Pool with Context Cancellation",
           "summary": "Đây là kiến thức cốt lõi về Go Channels (kênh giao tiếp). Trong các hệ thống ngân hàng, việc hiểu sai về Channels có thể dẫn đến Deadlock (treo toàn bộ hệ thống) hoặc Memory Leak (tràn bộ nhớ).",
           "author": "nathan.huynh",
-          "path": "public/content/golang-buffered-unbuffered-channel/vi.md"
+          "path": "content/golang-buffered-unbuffered-channel/vi.md"
         }
       }
     },
@@ -764,7 +764,7 @@
           "title": "Golang: Context Package",
           "summary": "Đây là giải thích chi tiết về Context Package - \"xương sống\" của lập trình Concurrency trong Go, đặc biệt quan trọng trong các hệ thống Backend/Banking để quản lý vòng đời request.",
           "author": "nathan.huynh",
-          "path": "public/content/golang-context-package/vi.md"
+          "path": "content/golang-context-package/vi.md"
         }
       }
     },
@@ -785,7 +785,7 @@
           "title": "Golang: Defer, Panic, Recover",
           "summary": "> [!INFO] Mental Model > > Hãy tưởng tượng giống như việc xếp bát đĩa vào ngăn xếp (Stack). > > - Cái nào vào sau cùng (Last In) sẽ được lấy ra rửa trước tiên (First Out). > > - Nguyên lý: LIFO...",
           "author": "nathan.huynh",
-          "path": "public/content/golang-defer-panic-recover/vi.md"
+          "path": "content/golang-defer-panic-recover/vi.md"
         }
       }
     },
@@ -804,7 +804,7 @@
           "title": "Golang - Garbage Collector (GC)",
           "summary": "This guide is intended to aid advanced Go users in better understanding their application costs by providing insights into the Go garbage collector. It also provides guidance on how Go users may...",
           "author": "nathan.huynh",
-          "path": "public/content/golang-gc/vi.md"
+          "path": "content/golang-gc/vi.md"
         }
       }
     },
@@ -826,7 +826,7 @@
           "title": "Golang: Goroutine Leak",
           "summary": "Đã rõ. Tôi sẽ tuân thủ nghiêm ngặt việc sử dụng ` cho các đoạn mã Golang.",
           "author": "nathan.huynh",
-          "path": "public/content/golang-gorountine-leak/vi.md"
+          "path": "content/golang-gorountine-leak/vi.md"
         }
       }
     },
@@ -848,7 +848,7 @@
           "title": "Golang - Interface Internals",
           "summary": "Trong Go runtime, Interface không chỉ là một con trỏ đơn thuần. Nó thực chất là một struct chứa 2 từ máy (machine words) (thường là 16 bytes trên hệ điều hành 64-bit).",
           "author": "nathan.huynh",
-          "path": "public/content/golang-interface/vi.md"
+          "path": "content/golang-interface/vi.md"
         }
       }
     },
@@ -867,7 +867,7 @@
           "title": "Golang - Map Internals",
           "summary": "Dưới đây là tóm tắt bài viết của Dave Cheney dưới định dạng Obsidian để bạn có thể copy trực tiếp vào vault của mình.",
           "author": "nathan.huynh",
-          "path": "public/content/golang-map/vi.md"
+          "path": "content/golang-map/vi.md"
         }
       }
     },
@@ -889,7 +889,7 @@
           "title": "Golang - Map Internals & Thread Safety",
           "summary": "> [!INFO] Mental Model > > Map trong Go là một Hash Table. > > Nó được thiết kế để tối ưu tốc độ, KHÔNG phải để an toàn đa luồng (Thread-safe).",
           "author": "nathan.huynh",
-          "path": "public/content/golang-map-internals-thread-safety/vi.md"
+          "path": "content/golang-map-internals-thread-safety/vi.md"
         }
       }
     },
@@ -912,7 +912,7 @@
           "title": "Golang - Money Handling & Precision",
           "summary": "Trong hệ thống tài chính, việc sử dụng hay để tính toán tiền tệ là TỘI ÁC.",
           "author": "nathan.huynh",
-          "path": "public/content/golang-money-handling-precision/vi.md"
+          "path": "content/golang-money-handling-precision/vi.md"
         }
       }
     },
@@ -931,7 +931,7 @@
           "title": "Golang - Mutex vs Atomic vs RWMutex",
           "summary": "Các hệ thống ngân hàng yêu cầu tính nhất quán dữ liệu (Data Consistency) tuyệt đối (tiền không được tự nhiên sinh ra hay mất đi).",
           "author": "nathan.huynh",
-          "path": "public/content/golang-mutex-vs-atomic-vs-rwmutex/vi.md"
+          "path": "content/golang-mutex-vs-atomic-vs-rwmutex/vi.md"
         }
       }
     },
@@ -953,7 +953,7 @@
           "title": "Concurrency: Race Condition (Điều kiện đua)",
           "summary": "Đây là giải thích về Race Condition - \"Kẻ thù số 1\" của các hệ thống ngân hàng và ứng dụng đa luồng, được trình bày theo định dạng Obsidian.",
           "author": "nathan.huynh",
-          "path": "public/content/golang-race-condition/vi.md"
+          "path": "content/golang-race-condition/vi.md"
         }
       }
     },
@@ -972,7 +972,7 @@
           "title": "Golang - Slices Internals",
           "summary": "Go’s slice type provides a convenient and efficient means of working with sequences of typed data. Slices are analogous to arrays in other languages, but have some unusual properties. This article...",
           "author": "nathan.huynh",
-          "path": "public/content/golang-slices/vi.md"
+          "path": "content/golang-slices/vi.md"
         }
       }
     },
@@ -995,7 +995,7 @@
           "title": "Golang - SOLID Design Principles",
           "summary": "Go không phải là ngôn ngữ hướng đối tượng (OOP) theo kiểu Java/C#.",
           "author": "nathan.huynh",
-          "path": "public/content/golang-solid-design-principles/vi.md"
+          "path": "content/golang-solid-design-principles/vi.md"
         }
       }
     },
@@ -1014,7 +1014,7 @@
           "title": "Golang - Stack & Heap",
           "summary": "Mỗi khi một Goroutine khởi chạy, nó được cấp một khối bộ nhớ gọi là Stack.",
           "author": "nathan.huynh",
-          "path": "public/content/golang-stack-heap/vi.md"
+          "path": "content/golang-stack-heap/vi.md"
         }
       }
     },
@@ -1037,7 +1037,7 @@
           "title": "Kafka - Basic Concepts",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/kafka-basic/vi.md"
+          "path": "content/kafka-basic/vi.md"
         }
       }
     },
@@ -1060,7 +1060,7 @@
           "title": "Microservices Architecture - Chia để trị",
           "summary": "> > - Monolith (Nguyên khối): Giống như một Tòa lâu đài khổng lồ bằng đá. > > - _Ưu điểm:_ Dễ xây dựng lúc đầu, mọi thứ ở chung một chỗ, gọi nhau rất nhanh. > > - _Nhược điểm:_ Muốn sửa cái cửa sổ...",
           "author": "nathan.huynh",
-          "path": "public/content/microservices-architecture-chia-đe-tri-divide-and-conquer/vi.md"
+          "path": "content/microservices-architecture-chia-đe-tri-divide-and-conquer/vi.md"
         }
       }
     },
@@ -1079,7 +1079,7 @@
           "title": "9. Java & Spring Boot (Legacy Integration)",
           "summary": "- Dave Cheney: Functional Options - Refactoring Guru: Singleton Go - Refactoring Guru: Factory Go - Refactoring Guru: Strategy Go - Refactoring Guru: Adapter Go",
           "author": "nathan.huynh",
-          "path": "public/content/roadmap/vi.md"
+          "path": "content/roadmap/vi.md"
         }
       }
     },
@@ -1102,7 +1102,7 @@
           "title": "S3 - Object Storage, Lifecycle & Consistency",
           "summary": "- AWS S3 Storage Classes",
           "author": "nathan.huynh",
-          "path": "public/content/s3-simple-storage-service-object-storage-lifecycle-consistency/vi.md"
+          "path": "content/s3-simple-storage-service-object-storage-lifecycle-consistency/vi.md"
         }
       }
     },
@@ -1127,7 +1127,7 @@
           "title": "Security - Cryptography",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/security-cryptography/vi.md"
+          "path": "content/security-cryptography/vi.md"
         }
       }
     },
@@ -1152,7 +1152,7 @@
           "title": "Security - CSRF & XSS",
           "summary": "XSS xảy ra khi App hiển thị dữ liệu user nhập vào (Input) mà không lọc, khiến trình duyệt hiểu nhầm dữ liệu đó là mã lệnh (Script).",
           "author": "nathan.huynh",
-          "path": "public/content/security-csrf-xss-the-twin-killers/vi.md"
+          "path": "content/security-csrf-xss-the-twin-killers/vi.md"
         }
       }
     },
@@ -1176,7 +1176,7 @@
           "title": "Security - JWT (JSON Web Tokens)",
           "summary": "Khác với Session-based truyền thống (Server phải lưu session trong RAM/Redis), JWT là Stateless. - Server tạo ra Token, ký tên vào đó, rồi ném cho Client. - Server KHÔNG LƯU gì cả. - Lần sau...",
           "author": "nathan.huynh",
-          "path": "public/content/security-jwt-json-web-tokens/vi.md"
+          "path": "content/security-jwt-json-web-tokens/vi.md"
         }
       }
     },
@@ -1200,7 +1200,7 @@
           "title": "Security - mTLS",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/security-mtls/vi.md"
+          "path": "content/security-mtls/vi.md"
         }
       }
     },
@@ -1225,7 +1225,7 @@
           "title": "Security - OAuth 2.0 & OIDC",
           "summary": "Rất nhiều người nhầm lẫn hai khái niệm này.",
           "author": "nathan.huynh",
-          "path": "public/content/security-oauth-20-oidc-modern-authentication/vi.md"
+          "path": "content/security-oauth-20-oidc-modern-authentication/vi.md"
         }
       }
     },
@@ -1249,7 +1249,7 @@
           "title": "Security - OWASP Top 10 API Security",
           "summary": "Trước đây, ta hay nghe đến OWASP Top 10 Web (SQL Injection, XSS...).",
           "author": "nathan.huynh",
-          "path": "public/content/security-owasp-top-10-api-security/vi.md"
+          "path": "content/security-owasp-top-10-api-security/vi.md"
         }
       }
     },
@@ -1274,7 +1274,7 @@
           "title": "Security - Password Hashing",
           "summary": "Đây là sự nhầm lẫn tai hại nhất của Newbie.",
           "author": "nathan.huynh",
-          "path": "public/content/security-password-hashing/vi.md"
+          "path": "content/security-password-hashing/vi.md"
         }
       }
     },
@@ -1299,7 +1299,7 @@
           "title": "Security - PII Data Protection",
           "summary": "Security - PII Data Protection (Encryption at Rest)",
           "author": "nathan.huynh",
-          "path": "public/content/security-pii-data-protection-encryption-at-rest/vi.md"
+          "path": "content/security-pii-data-protection-encryption-at-rest/vi.md"
         }
       }
     },
@@ -1323,7 +1323,7 @@
           "title": "Security - RBAC & ABAC",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/security-rbac-abac/vi.md"
+          "path": "content/security-rbac-abac/vi.md"
         }
       }
     },
@@ -1347,7 +1347,7 @@
           "title": "Security - SQL Injection Prevention",
           "summary": "SQL Injection (SQLi) xảy ra khi ứng dụng nhầm lẫn giữa Dữ liệu (Data) và Mã lệnh (Code).",
           "author": "nathan.huynh",
-          "path": "public/content/security-sql-injection-prevention/vi.md"
+          "path": "content/security-sql-injection-prevention/vi.md"
         }
       }
     },
@@ -1371,7 +1371,7 @@
           "title": "Security - Threat Modeling & STRIDE",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/security-threat-modeling-mo-hinh-hoa-moi-đe-doa-va-bo-khung-stride/vi.md"
+          "path": "content/security-threat-modeling-mo-hinh-hoa-moi-đe-doa-va-bo-khung-stride/vi.md"
         }
       }
     },
@@ -1395,7 +1395,7 @@
           "title": "Security - Zero Trust",
           "summary": "---",
           "author": "nathan.huynh",
-          "path": "public/content/security-zero-trust/vi.md"
+          "path": "content/security-zero-trust/vi.md"
         }
       }
     },
@@ -1418,7 +1418,7 @@
           "title": "Software Principles",
           "summary": "Nguyên lý này thường bị hiểu sai nhất. Mọi người nghĩ DRY đơn giản là \"Không được copy-paste code\".",
           "author": "nathan.huynh",
-          "path": "public/content/software-principles/vi.md"
+          "path": "content/software-principles/vi.md"
         }
       }
     },
@@ -1442,7 +1442,7 @@
           "title": "System Design - CDN & Edge Computing",
           "summary": "Dù server Backend của bạn có tối ưu đến mức phản hồi trong 1ms, nhưng nếu Server đặt ở Virginia (Mỹ) mà User đang ở Hà Nội, tín hiệu vẫn phải đi qua cáp quang biển vòng nửa trái đất.",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-cdn-edge-computing/vi.md"
+          "path": "content/system-design-cdn-edge-computing/vi.md"
         }
       }
     },
@@ -1466,7 +1466,7 @@
           "title": "System Design - Circuit Breaker",
           "summary": "Trong kiến trúc Microservices, Service A gọi Service B. Nếu Service B bị treo (CPU 100% hoặc DB Deadlock), nó sẽ không trả về lỗi ngay mà cứ im lặng (Timeout).",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-circuit-breaker/vi.md"
+          "path": "content/system-design-circuit-breaker/vi.md"
         }
       }
     },
@@ -1489,7 +1489,7 @@
           "title": "System Design - Consistent Hashing",
           "summary": "Để chia tải dữ liệu (Sharding) ra $N$ server, cách đơn giản nhất là dùng phép chia lấy dư:",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-consistent-hashing/vi.md"
+          "path": "content/system-design-consistent-hashing/vi.md"
         }
       }
     },
@@ -1513,7 +1513,7 @@
           "title": "System Design - Distributed Locking (Redlock)",
           "summary": "Trong lập trình đơn luồng hoặc đơn máy (Monolith), ta dùng để chặn Race Condition.",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-distributed-locking-redlock/vi.md"
+          "path": "content/system-design-distributed-locking-redlock/vi.md"
         }
       }
     },
@@ -1536,7 +1536,7 @@
           "title": "System Design - Double Entry Bookkeeping",
           "summary": "Trong lập trình cơ bản, khi cộng tiền cho user, ta thường viết:",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-double-entry-bookkeeping/vi.md"
+          "path": "content/system-design-double-entry-bookkeeping/vi.md"
         }
       }
     },
@@ -1559,7 +1559,7 @@
           "title": "System Design - E-Wallet (High Consistency)",
           "summary": "Trước khi vẽ hình, ta phải chốt các ràng buộc:",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-e-wallet-high-consistency-reliability/vi.md"
+          "path": "content/system-design-e-wallet-high-consistency-reliability/vi.md"
         }
       }
     },
@@ -1582,7 +1582,7 @@
           "title": "System Design - Eventual Consistency",
           "summary": "Trong thế giới Database truyền thống (SQL), chúng ta quen với Strong Consistency (Tính nhất quán mạnh): Ghi xong là Đọc thấy ngay.",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-eventual-consistency/vi.md"
+          "path": "content/system-design-eventual-consistency/vi.md"
         }
       }
     },
@@ -1605,7 +1605,7 @@
           "title": "System Design - Idempotency",
           "summary": "Stripe Engineering: Idempotency (Designing Robust APIs)",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-idempotency/vi.md"
+          "path": "content/system-design-idempotency/vi.md"
         }
       }
     },
@@ -1627,7 +1627,7 @@
           "title": "System Design Interview - The Ultimate Checklist",
           "summary": "Time Management: 45 - 60 Minutes",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-interview-the-ultimate-checklist/vi.md"
+          "path": "content/system-design-interview-the-ultimate-checklist/vi.md"
         }
       }
     },
@@ -1651,7 +1651,7 @@
           "title": "System Design - Rate Limiting",
           "summary": "Rate Limiting là \"người bảo vệ\" (Bouncer) đứng trước cổng API Gateway.",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-rate-limiting/vi.md"
+          "path": "content/system-design-rate-limiting/vi.md"
         }
       }
     },
@@ -1674,7 +1674,7 @@
           "title": "System Design - Saga Pattern",
           "summary": "Trong kiến trúc Monolith, ta có ACID Transaction của Database để đảm bảo an toàn.",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-saga-pattern/vi.md"
+          "path": "content/system-design-saga-pattern/vi.md"
         }
       }
     },
@@ -1697,7 +1697,7 @@
           "title": "System Design - Strangler Fig Pattern",
           "summary": "Bạn có một hệ thống Core Banking cũ kỹ (Monolith) viết bằng Java 6/Cobol, code rối rắm (Spaghetti code), deploy mất cả ngày.",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-strangler-fig-pattern/vi.md"
+          "path": "content/system-design-strangler-fig-pattern/vi.md"
         }
       }
     },
@@ -1721,7 +1721,7 @@
           "title": "System Design - Transactional Outbox Pattern",
           "summary": "Trong Microservices, khi một nghiệp vụ xảy ra (ví dụ: Tạo đơn hàng), bạn thường phải làm 2 việc:",
           "author": "nathan.huynh",
-          "path": "public/content/system-design-transactional-outbox-pattern/vi.md"
+          "path": "content/system-design-transactional-outbox-pattern/vi.md"
         }
       }
     },
@@ -1739,7 +1739,7 @@
           "title": "Thiết kế Hệ thống Core Banking (Mini)",
           "summary": "Chào mừng bạn đến với bài thi tốt nghiệp:.",
           "author": "nathan.huynh",
-          "path": "public/content/thiet-ke-he-thong-core-banking-mini/vi.md"
+          "path": "content/thiet-ke-he-thong-core-banking-mini/vi.md"
         }
       }
     },
@@ -1757,7 +1757,7 @@
           "title": "Troubleshooting",
           "summary": "Tuyệt vời. Chào mừng bạn đến với \"War Room\" (Phòng tác chiến).",
           "author": "nathan.huynh",
-          "path": "public/content/troubleshooting/vi.md"
+          "path": "content/troubleshooting/vi.md"
         }
       }
     }

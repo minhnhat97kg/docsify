@@ -84,8 +84,8 @@ def detect_language(filename: str) -> str | None:
 
 
 def build_article_path(folder_name: str, lang: str) -> str:
-    """Build relative path for a language file."""
-    return f"public/content/{folder_name}/{lang}.md"
+    """Path relative to site root (public/ is served as /)."""
+    return f"content/{folder_name}/{lang}.md"
 
 # ── Core Processing ──────────────────────────────────────────────────────────
 
