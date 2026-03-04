@@ -44,7 +44,8 @@ async function boot() {
   });
 
   try {
-    const res = await fetch("public/index.json");
+    const base = document.querySelector("base")?.href || "./";
+    const res = await fetch(base + "public/index.json");
     if (!res.ok) throw new Error("HTTP " + res.status);
     const data = await res.json();
     state.articles = data.articles || [];
@@ -245,7 +246,8 @@ async function loadLang(a, lang) {
   const body = document.getElementById("art-body");
   body.innerHTML = "<div class='msg'>loading...</div>";
   try {
-    const res = await fetch(ld.path);
+    const base = document.querySelector("base")?.href || "./";
+    const res = await fetch(base + ld.path);
     if (!res.ok) throw new Error("HTTP " + res.status);
     let txt = await res.text();
     txt = txt.replace(/^---[\s\S]*?---\s*/, "");
