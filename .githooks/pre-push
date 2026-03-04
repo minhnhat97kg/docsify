@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# pre-push: validate ALL content/*.md files before pushing
+# Catches cases where files were committed while hooks were bypassed.
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+VALIDATE="$REPO_ROOT/scripts/validate_articles.py"
+
+# Collect all .md files in content/ (excluding template/)
+ALL_MD=$(find "$REPO_ROOT/content" -name "*.md" \
+  ! -path "*/template/*" \
+  2>/dev/null)
+
+if [ -z "$ALL_MD" ]; then
+  exit 0
+fi
+
+echo "$ALL_MD" | python3 "$VALIDATE"
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+  echo "[hook] Push aborted. Fix validation errors and re-push."
+  exit 1
+fi
+
+exit 0

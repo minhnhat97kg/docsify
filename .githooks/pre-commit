@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# pre-commit: validate front matter of staged content/*.md files
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+VALIDATE="$REPO_ROOT/scripts/validate_articles.py"
+
+# Collect staged .md files inside content/
+STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep '^content/.*\.md$')
+
+if [ -z "$STAGED" ]; then
+  exit 0
+fi
+
+# Run validator
+echo "$STAGED" | python3 "$VALIDATE"
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+  echo "[hook] Commit aborted. Fix the errors above and try again."
+  exit 1
+fi
+
+exit 0
