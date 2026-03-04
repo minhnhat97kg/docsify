@@ -5,7 +5,7 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 VALIDATE="$REPO_ROOT/scripts/validate_articles.py"
 
 # Collect staged .md files inside content/
-STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep '^content/.*\.md$')
+STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep '^public/content/.*\.md$')
 
 if [ -z "$STAGED" ]; then
   exit 0

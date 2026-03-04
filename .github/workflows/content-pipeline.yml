@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, master]
     paths:
-      - "content/**"
+      - "public/content/**"
       - "scripts/processor.py"
   workflow_dispatch:
 
@@ -37,11 +37,11 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet public/index.json 2>/dev/null && \
-             git ls-files --error-unmatch public/index.json 2>/dev/null; then
-            echo "No changes to index.json — skipping commit."
+          git add public/index.json
+
+          if git diff --cached --quiet; then
+            echo "No changes — skipping commit."
           else
-            git add public/index.json
             git commit -m "chore: rebuild index.json [skip ci]"
             git push
           fi

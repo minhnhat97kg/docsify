@@ -19,7 +19,7 @@ except ImportError:
 
 # ── Configuration ────────────────────────────────────────────────────────────
 
-CONTENT_DIR = Path(__file__).parent.parent / "content"
+CONTENT_DIR = Path(__file__).parent.parent / "public" / "content"
 OUTPUT_FILE = Path(__file__).parent.parent / "public" / "index.json"
 REQUIRED_FIELDS = ["title", "tags", "date", "author", "summary"]
 DATE_FORMAT = "%Y-%m-%d"
@@ -85,7 +85,7 @@ def detect_language(filename: str) -> str | None:
 
 def build_article_path(folder_name: str, lang: str) -> str:
     """Build relative path for a language file."""
-    return f"content/{folder_name}/{lang}.md"
+    return f"public/content/{folder_name}/{lang}.md"
 
 # ── Core Processing ──────────────────────────────────────────────────────────
 
@@ -197,7 +197,7 @@ def write_output(articles: list):
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    print(f"\nOutput: {OUTPUT_FILE} ({len(articles)} article(s))")
+    print(f"Output: {OUTPUT_FILE} ({len(articles)} article(s))")
 
 # ── Entry Point ───────────────────────────────────────────────────────────────
 

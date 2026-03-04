@@ -6,7 +6,7 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 VALIDATE="$REPO_ROOT/scripts/validate_articles.py"
 
 # Collect all .md files in content/ (excluding template/)
-ALL_MD=$(find "$REPO_ROOT/content" -name "*.md" \
+ALL_MD=$(find "$REPO_ROOT/public/content" -name "*.md" \
   ! -path "*/template/*" \
   2>/dev/null)
 

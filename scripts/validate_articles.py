@@ -23,7 +23,7 @@ except ImportError:
 
 REQUIRED_FIELDS  = ["title", "tags", "date", "author", "summary"]
 DATE_RE          = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-CONTENT_DIR_NAME = "content"
+CONTENT_DIR_NAME = "public"   # path contains public/content/...
 SKIP_DIRS        = {"template"}
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -76,19 +76,17 @@ def validate_file(path: Path) -> list[str]:
 
 
 def is_content_md(path_str: str) -> bool:
-    """Return True if path is a .md file inside content/ (not template/)."""
+    """Return True if path is a .md file inside public/content/ (not template/)."""
     p = Path(path_str)
     if p.suffix != ".md":
         return False
+    # must contain public/content/
     parts = p.parts
-    try:
-        idx = parts.index(CONTENT_DIR_NAME)
-    except ValueError:
-        return False
-    # parts[idx+1] is the article folder name
-    if len(parts) > idx + 1 and parts[idx + 1] in SKIP_DIRS:
-        return False
-    return True
+    for i, part in enumerate(parts):
+        if part == "public" and i + 1 < len(parts) and parts[i + 1] == "content":
+            folder = parts[i + 2] if i + 2 < len(parts) else ""
+            return folder not in SKIP_DIRS
+    return False
 
 
 # ── Entry ─────────────────────────────────────────────────────────────────────
